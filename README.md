@@ -1,1 +1,63 @@
-# medic.cfg
+weapontwo;weapontwo
+
+bind "mouse1" "+attack"
+bind "mouse2" "+attack2"
+
+// Fake uber and notification
+alias "fakeuber" "voicemenu 1 7; say_team -=+FAKED ZE ÜBER+=-"
+// Bind
+bind "q" "fakeuber"
+
+//Uber
+alias +charge "slot2;+attack2;voicemenu 2 4;autocall_initial;say_team ░▒▓ I POPPED UBER ▓▒░"
+alias -charge "-attack2"
+bind "mouse2" "+charge"
+
+alias weaponone "slot1;r_drawviewmodel 0;viewmodel_fov 90"
+alias weapontwo "slot2;r_drawviewmodel 0;viewmodel_fov 30"
+alias weaponthree "slot3;r_drawviewmodel 1;viewmodel_fov 90"
+
+bind 1 weaponone
+bind 2 weapontwo
+bind 3 weaponthree
+bind 4 slot4
+bind 5 slot5
+
+alias "autocall_initial" "hud_medicautocallersthreshold "50""
+alias "autocall_temp" "hud_medicautocallersthreshold "150""
+alias "+autocall_temp_hit" "autocall_temp"
+alias "-autocall_temp_hit" "autocall_initial"
+bind "r" "+autocall_temp_hit; +reload"
+
+//Loadout switcher
+alias +loadoutA load_itempreset 0
+alias +loadoutB load_itempreset 1
+alias +loadoutC load_itempreset 2
+alias +loadoutD load_itempreset 3
+alias -loadoutA slot2
+alias -loadoutB slot2
+alias -loadoutC slot2
+alias -loadoutD slot2
+bind "F1" "say_team ***MEDIGUN***; +loadoutA"
+bind "F2" "say_team ***KRITZKRIEG***; +loadoutB"
+bind "F3" "say_team ***QUICK-FIX***; +loadoutC"
+bind "F4" "say_team ***MEDIGUN***; +loadoutD"
+
+bind mouse4 "r_drawviewmodel 1;viewmodel_fov 70"  //101
+bind mouse5 "say_team ***CHARGE READY***"
+
+//bind "shift" "+duck"
+//lazy jump
+alias +lazy "+jump; +duck"
+alias -lazy "-jump; -duck"
+bind "space" "+lazy"
+
+//bind "space" "+jump"
+//bind "shift" "+duck"
+
+//bind mwheelup "invprev"
+//bind mwheeldown "invnext"
+
+//cl_crosshair_style 7
+//cl_crosshair_scale 18
+//cl_crosshair_red 255;cl_crosshair_green 255;cl_crosshair_blue 0
